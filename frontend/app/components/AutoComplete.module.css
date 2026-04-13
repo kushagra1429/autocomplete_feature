@@ -1,0 +1,154 @@
+.mainContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.inputcontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: white;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.inputcontainer input{
+  width: 100%;
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
+  text-align: left;
+  border-radius: 12px 0;
+
+  padding-left: 10px;
+  /* border-bottom: 1px solid rgb(212, 212, 212); */
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: black;
+
+}
+
+.heading{
+  font-size: 30px;
+  text-align: center;
+}
+.input {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px 0;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  transition: border-color 0.2s;
+}
+.inputcontainer input:hover {
+    border-color: rgb(43, 127, 190);
+}
+
+.inputcontainer input:focus {
+    border-color: rgb(43, 127, 190);
+    outline: none; /* removes default browser outline */
+}
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.loading {
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.subclass{
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 5px 0 0 10px;
+  border-radius: 0 12px;
+
+
+}
+.searchBtn{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 10px;
+}
+.AutoComplete_container {
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+  /* border: 1px solid #555555; */
+  opacity: 0;
+  display: flex;
+  border-radius: 0 12px;
+  /* padding: 10px 0 10px 10px; */
+  color: black;
+  flex-direction: column;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.activeRecommendations {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.AutoComplete_vals {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.AutoComplete_vals li {
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid #7f7f7f;
+}
+
+.AutoComplete_vals li:last-child {
+  border-bottom: none;
+}
+
+.AutoComplete_vals li:hover, .AutoComplete_vals li.active {
+  background-color: #f1f5f9;
+}
+
+.itemName {
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemCoords {
+  font-size: 12px;
+  color: #94a3b8;
+}
+.subclass:hover{
+  background-color: #d5d5d5;
+}
